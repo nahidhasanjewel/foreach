@@ -1,0 +1,42 @@
+using System;
+
+namespace foreachEx2
+{
+    public abstract class Animal
+    {
+        abstract public void Eat();
+    }
+     public class Lion :Animal
+    {
+        public override void Eat()
+        {
+            Console.WriteLine("Lion eats meat.");
+
+        }
+    }
+     public class Elephant : Animal
+    {
+        public override void Eat()
+        {
+            Console.WriteLine("Elephant eats vrgtable.");
+        }
+    }
+    class classZoo
+    {
+        static void Main(string[] args)
+        {
+            Lion objLion = new Lion();
+            Elephant objElephant = new Elephant();
+
+            Animal[] zoo = new Animal[2];
+            zoo[1] = objLion;
+            zoo[0] = objElephant;
+
+            foreach (Animal animal in zoo) 
+            {
+                animal.Eat();
+            }
+            Console.ReadKey();
+        }
+    }
+}
